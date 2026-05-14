@@ -1,12 +1,14 @@
 package com.cdent.usuarios.services;
 
-import com.cdent.usuarios.models.Usuario;
-import com.cdent.usuarios.repositories.UsuarioRepository;
-import jakarta.transaction.Transactional;
-import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.util.Optional;
+
+import org.springframework.stereotype.Service;
+
+import com.cdent.usuarios.models.Usuario;
+import com.cdent.usuarios.repositories.UsuarioRepository;
+
+import jakarta.transaction.Transactional;
 
 @Service
 @Transactional

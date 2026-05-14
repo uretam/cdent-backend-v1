@@ -1,12 +1,14 @@
 package com.cdent.odontologos.services;
 
-import com.cdent.odontologos.models.Odontologo;
-import com.cdent.odontologos.repositories.OdontologoRepository;
-import jakarta.transaction.Transactional;
-import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.util.Optional;
+
+import org.springframework.stereotype.Service;
+
+import com.cdent.odontologos.models.Odontologo;
+import com.cdent.odontologos.repositories.OdontologoRepository;
+
+import jakarta.transaction.Transactional;
 
 @Service
 @Transactional

@@ -1,12 +1,14 @@
 package com.cdent.tratamientos.services;
 
-import com.cdent.tratamientos.models.Tratamiento;
-import com.cdent.tratamientos.repositories.TratamientoRepository;
-import jakarta.transaction.Transactional;
-import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.util.Optional;
+
+import org.springframework.stereotype.Service;
+
+import com.cdent.tratamientos.models.Tratamiento;
+import com.cdent.tratamientos.repositories.TratamientoRepository;
+
+import jakarta.transaction.Transactional;
 
 @Service
 @Transactional

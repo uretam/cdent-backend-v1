@@ -1,12 +1,14 @@
 package com.cdent.pacientes.services;
 
-import com.cdent.pacientes.models.ContactoEmergencia;
-import com.cdent.pacientes.repositories.ContactoEmergenciaRepository;
-import jakarta.transaction.Transactional;
-import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.util.Optional;
+
+import org.springframework.stereotype.Service;
+
+import com.cdent.pacientes.models.ContactoEmergencia;
+import com.cdent.pacientes.repositories.ContactoEmergenciaRepository;
+
+import jakarta.transaction.Transactional;
 
 @Service
 @Transactional
