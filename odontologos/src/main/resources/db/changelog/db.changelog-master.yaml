@@ -1,0 +1,103 @@
+databaseChangeLog:
+  - changeSet:
+      id: 001-create-odontologos
+      author: copilot
+      changes:
+        - createTable:
+            tableName: odontologos
+            columns:
+              - column:
+                  name: id_odontologo
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: rut
+                  type: VARCHAR(50)
+                  constraints:
+                    nullable: false
+                    unique: true
+              - column:
+                  name: nombres
+                  type: VARCHAR(200)
+              - column:
+                  name: apellidos
+                  type: VARCHAR(200)
+              - column:
+                  name: especialidad
+                  type: VARCHAR(200)
+              - column:
+                  name: email
+                  type: VARCHAR(200)
+              - column:
+                  name: telefono
+                  type: VARCHAR(50)
+              - column:
+                  name: activo
+                  type: BOOLEAN
+
+  - changeSet:
+      id: 002-insert-odontologos
+      author: copilot
+      changes:
+        - insert:
+            tableName: odontologos
+            columns:
+              - column: { name: id_odontologo, valueNumeric: 1 }
+              - column: { name: rut, value: "21111111-1" }
+              - column: { name: nombres, value: "Alberto" }
+              - column: { name: apellidos, value: "Navarro" }
+              - column: { name: especialidad, value: "Ortodoncia" }
+              - column: { name: email, value: "alberto.navarro@example.com" }
+              - column: { name: telefono, value: "+56921111111" }
+              - column: { name: activo, valueBoolean: true }
+
+        - insert:
+            tableName: odontologos
+            columns:
+              - column: { name: id_odontologo, valueNumeric: 2 }
+              - column: { name: rut, value: "22222222-2" }
+              - column: { name: nombres, value: "Beatriz" }
+              - column: { name: apellidos, value: "Castillo" }
+              - column: { name: especialidad, value: "Endodoncia" }
+              - column: { name: email, value: "beatriz.castillo@example.com" }
+              - column: { name: telefono, value: "+56922222222" }
+              - column: { name: activo, valueBoolean: true }
+
+        - insert:
+            tableName: odontologos
+            columns:
+              - column: { name: id_odontologo, valueNumeric: 3 }
+              - column: { name: rut, value: "23333333-3" }
+              - column: { name: nombres, value: "Carlos" }
+              - column: { name: apellidos, value: "Díaz" }
+              - column: { name: especialidad, value: "Periodoncia" }
+              - column: { name: email, value: "carlos.diaz@example.com" }
+              - column: { name: telefono, value: "+56923333333" }
+              - column: { name: activo, valueBoolean: true }
+
+        - insert:
+            tableName: odontologos
+            columns:
+              - column: { name: id_odontologo, valueNumeric: 4 }
+              - column: { name: rut, value: "24444444-4" }
+              - column: { name: nombres, value: "Diana" }
+              - column: { name: apellidos, value: "Flores" }
+              - column: { name: especialidad, value: "Prostodoncia" }
+              - column: { name: email, value: "diana.flores@example.com" }
+              - column: { name: telefono, value: "+56924444444" }
+              - column: { name: activo, valueBoolean: true }
+
+        - insert:
+            tableName: odontologos
+            columns:
+              - column: { name: id_odontologo, valueNumeric: 5 }
+              - column: { name: rut, value: "25555555-5" }
+              - column: { name: nombres, value: "Esteban" }
+              - column: { name: apellidos, value: "González" }
+              - column: { name: especialidad, value: "Cirugía" }
+              - column: { name: email, value: "esteban.gonzalez@example.com" }
+              - column: { name: telefono, value: "+56925555555" }
+              - column: { name: activo, valueBoolean: true }

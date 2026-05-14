@@ -1,0 +1,17 @@
+# Archivos compilados
+target/
+build/
+out/
+*.class
+
+# Entornos de desarrollo
+.idea/
+.vscode/
+*.iml
+.project
+.classpath
+
+# SO y Logs
+.DS_Store
+Thumbs.db
+*.log

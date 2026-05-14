@@ -1,0 +1,84 @@
+databaseChangeLog:
+  - changeSet:
+      id: 001-create-citas
+      author: copilot
+      changes:
+        - createTable:
+            tableName: citas
+            columns:
+              - column:
+                  name: id_cita
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: id_paciente
+                  type: BIGINT
+              - column:
+                  name: id_odontologo
+                  type: BIGINT
+              - column:
+                  name: fecha_hora
+                  type: TIMESTAMP
+              - column:
+                  name: motivo
+                  type: VARCHAR(500)
+              - column:
+                  name: estado
+                  type: VARCHAR(100)
+
+  - changeSet:
+      id: 002-insert-citas
+      author: copilot
+      changes:
+        - insert:
+            tableName: citas
+            columns:
+              - column: { name: id_cita, valueNumeric: 1 }
+              - column: { name: id_paciente, valueNumeric: 1 }
+              - column: { name: id_odontologo, valueNumeric: 1 }
+              - column: { name: fecha_hora, valueDate: "2026-06-01T09:00:00" }
+              - column: { name: motivo, value: "Revisión" }
+              - column: { name: estado, value: "PROGRAMADA" }
+
+        - insert:
+            tableName: citas
+            columns:
+              - column: { name: id_cita, valueNumeric: 2 }
+              - column: { name: id_paciente, valueNumeric: 2 }
+              - column: { name: id_odontologo, valueNumeric: 2 }
+              - column: { name: fecha_hora, valueDate: "2026-06-02T10:30:00" }
+              - column: { name: motivo, value: "Limpieza" }
+              - column: { name: estado, value: "PROGRAMADA" }
+
+        - insert:
+            tableName: citas
+            columns:
+              - column: { name: id_cita, valueNumeric: 3 }
+              - column: { name: id_paciente, valueNumeric: 3 }
+              - column: { name: id_odontologo, valueNumeric: 3 }
+              - column: { name: fecha_hora, valueDate: "2026-06-03T11:00:00" }
+              - column: { name: motivo, value: "Endodoncia" }
+              - column: { name: estado, value: "PROGRAMADA" }
+
+        - insert:
+            tableName: citas
+            columns:
+              - column: { name: id_cita, valueNumeric: 4 }
+              - column: { name: id_paciente, valueNumeric: 4 }
+              - column: { name: id_odontologo, valueNumeric: 4 }
+              - column: { name: fecha_hora, valueDate: "2026-06-04T14:00:00" }
+              - column: { name: motivo, value: "Cirugía menor" }
+              - column: { name: estado, value: "PROGRAMADA" }
+
+        - insert:
+            tableName: citas
+            columns:
+              - column: { name: id_cita, valueNumeric: 5 }
+              - column: { name: id_paciente, valueNumeric: 5 }
+              - column: { name: id_odontologo, valueNumeric: 5 }
+              - column: { name: fecha_hora, valueDate: "2026-06-05T09:30:00" }
+              - column: { name: motivo, value: "Implante" }
+              - column: { name: estado, value: "PROGRAMADA" }

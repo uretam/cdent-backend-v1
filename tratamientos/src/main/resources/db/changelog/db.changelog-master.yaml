@@ -1,0 +1,68 @@
+databaseChangeLog:
+  - changeSet:
+      id: 001-create-tratamientos
+      author: copilot
+      changes:
+        - createTable:
+            tableName: tratamientos
+            columns:
+              - column:
+                  name: id_tratamiento
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: nombre_tratamiento
+                  type: VARCHAR(200)
+              - column:
+                  name: descripcion
+                  type: VARCHAR(1000)
+              - column:
+                  name: precio
+                  type: DECIMAL(10,2)
+
+  - changeSet:
+      id: 002-insert-tratamientos
+      author: copilot
+      changes:
+        - insert:
+            tableName: tratamientos
+            columns:
+              - column: { name: id_tratamiento, valueNumeric: 1 }
+              - column: { name: nombre_tratamiento, value: "Limpieza dental" }
+              - column: { name: descripcion, value: "Limpieza profesional" }
+              - column: { name: precio, valueNumeric: 25000 }
+
+        - insert:
+            tableName: tratamientos
+            columns:
+              - column: { name: id_tratamiento, valueNumeric: 2 }
+              - column: { name: nombre_tratamiento, value: "Obturación" }
+              - column: { name: descripcion, value: "Obturación de cavidades" }
+              - column: { name: precio, valueNumeric: 30000 }
+
+        - insert:
+            tableName: tratamientos
+            columns:
+              - column: { name: id_tratamiento, valueNumeric: 3 }
+              - column: { name: nombre_tratamiento, value: "Endodoncia" }
+              - column: { name: descripcion, value: "Tratamiento de conducto" }
+              - column: { name: precio, valueNumeric: 80000 }
+
+        - insert:
+            tableName: tratamientos
+            columns:
+              - column: { name: id_tratamiento, valueNumeric: 4 }
+              - column: { name: nombre_tratamiento, value: "Extracción" }
+              - column: { name: descripcion, value: "Extracción dental" }
+              - column: { name: precio, valueNumeric: 20000 }
+
+        - insert:
+            tableName: tratamientos
+            columns:
+              - column: { name: id_tratamiento, valueNumeric: 5 }
+              - column: { name: nombre_tratamiento, value: "Implante" }
+              - column: { name: descripcion, value: "Implante dental" }
+              - column: { name: precio, valueNumeric: 450000 }

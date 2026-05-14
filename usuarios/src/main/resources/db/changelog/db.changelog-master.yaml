@@ -1,0 +1,73 @@
+databaseChangeLog:
+  - changeSet:
+      id: 001-create-usuarios
+      author: copilot
+      changes:
+        - createTable:
+            tableName: usuarios
+            columns:
+              - column:
+                  name: id_usuario
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: username
+                  type: VARCHAR(100)
+                  constraints:
+                    nullable: false
+                    unique: true
+              - column:
+                  name: password
+                  type: VARCHAR(200)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: rol
+                  type: VARCHAR(100)
+
+  - changeSet:
+      id: 002-insert-usuarios
+      author: copilot
+      changes:
+        - insert:
+            tableName: usuarios
+            columns:
+              - column: { name: id_usuario, valueNumeric: 1 }
+              - column: { name: username, value: "admin" }
+              - column: { name: password, value: "adminpass" }
+              - column: { name: rol, value: "ADMIN" }
+
+        - insert:
+            tableName: usuarios
+            columns:
+              - column: { name: id_usuario, valueNumeric: 2 }
+              - column: { name: username, value: "user1" }
+              - column: { name: password, value: "password1" }
+              - column: { name: rol, value: "USER" }
+
+        - insert:
+            tableName: usuarios
+            columns:
+              - column: { name: id_usuario, valueNumeric: 3 }
+              - column: { name: username, value: "user2" }
+              - column: { name: password, value: "password2" }
+              - column: { name: rol, value: "USER" }
+
+        - insert:
+            tableName: usuarios
+            columns:
+              - column: { name: id_usuario, valueNumeric: 4 }
+              - column: { name: username, value: "recepcion" }
+              - column: { name: password, value: "recep123" }
+              - column: { name: rol, value: "RECEP" }
+
+        - insert:
+            tableName: usuarios
+            columns:
+              - column: { name: id_usuario, valueNumeric: 5 }
+              - column: { name: username, value: "doctor1" }
+              - column: { name: password, value: "docpass1" }
+              - column: { name: rol, value: "DOCTOR" }

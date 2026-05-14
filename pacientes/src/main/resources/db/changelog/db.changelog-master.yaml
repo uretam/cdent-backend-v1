@@ -1,0 +1,252 @@
+databaseChangeLog:
+  - changeSet:
+      id: 001-create-pacientes
+      author: copilot
+      changes:
+        - createTable:
+            tableName: pacientes
+            columns:
+              - column:
+                  name: id_paciente
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: rut
+                  type: VARCHAR(50)
+                  constraints:
+                    nullable: false
+                    unique: true
+              - column:
+                  name: nombres
+                  type: VARCHAR(200)
+              - column:
+                  name: apellidos
+                  type: VARCHAR(200)
+              - column:
+                  name: fecha_nacimiento
+                  type: DATE
+              - column:
+                  name: email
+                  type: VARCHAR(200)
+              - column:
+                  name: telefono
+                  type: VARCHAR(50)
+              - column:
+                  name: direccion
+                  type: VARCHAR(300)
+              - column:
+                  name: activo
+                  type: BOOLEAN
+
+  - changeSet:
+      id: 002-create-contactos-emergencia
+      author: copilot
+      changes:
+        - createTable:
+            tableName: contactos_emergencia
+            columns:
+              - column:
+                  name: id_contacto
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: nombre_contacto
+                  type: VARCHAR(200)
+              - column:
+                  name: telefono_contacto
+                  type: VARCHAR(50)
+              - column:
+                  name: parentesco
+                  type: VARCHAR(100)
+              - column:
+                  name: id_paciente
+                  type: BIGINT
+
+  - changeSet:
+      id: 003-insert-pacientes
+      author: copilot
+      changes:
+        - insert:
+            tableName: pacientes
+            columns:
+              - column: { name: id_paciente, valueNumeric: 1 }
+              - column: { name: rut, value: "11111111-1" }
+              - column: { name: nombres, value: "Juan" }
+              - column: { name: apellidos, value: "Pérez" }
+              - column: { name: fecha_nacimiento, valueDate: "1980-01-15" }
+              - column: { name: email, value: "juan.perez@example.com" }
+              - column: { name: telefono, value: "+56911111111" }
+              - column: { name: direccion, value: "Calle 1 #100" }
+              - column: { name: activo, valueBoolean: true }
+
+        - insert:
+            tableName: pacientes
+            columns:
+              - column: { name: id_paciente, valueNumeric: 2 }
+              - column: { name: rut, value: "22222222-2" }
+              - column: { name: nombres, value: "Ana" }
+              - column: { name: apellidos, value: "Gómez" }
+              - column: { name: fecha_nacimiento, valueDate: "1990-06-20" }
+              - column: { name: email, value: "ana.gomez@example.com" }
+              - column: { name: telefono, value: "+56922222222" }
+              - column: { name: direccion, value: "Calle 2 #200" }
+              - column: { name: activo, valueBoolean: true }
+
+        - insert:
+            tableName: pacientes
+            columns:
+              - column: { name: id_paciente, valueNumeric: 3 }
+              - column: { name: rut, value: "33333333-3" }
+              - column: { name: nombres, value: "María" }
+              - column: { name: apellidos, value: "Rojas" }
+              - column: { name: fecha_nacimiento, valueDate: "1975-12-01" }
+              - column: { name: email, value: "maria.rojas@example.com" }
+              - column: { name: telefono, value: "+56933333333" }
+              - column: { name: direccion, value: "Avenida 3 #300" }
+              - column: { name: activo, valueBoolean: true }
+
+        - insert:
+            tableName: pacientes
+            columns:
+              - column: { name: id_paciente, valueNumeric: 4 }
+              - column: { name: rut, value: "44444444-4" }
+              - column: { name: nombres, value: "Pedro" }
+              - column: { name: apellidos, value: "López" }
+              - column: { name: fecha_nacimiento, valueDate: "1985-03-10" }
+              - column: { name: email, value: "pedro.lopez@example.com" }
+              - column: { name: telefono, value: "+56944444444" }
+              - column: { name: direccion, value: "Camino Real 4" }
+              - column: { name: activo, valueBoolean: true }
+
+        - insert:
+            tableName: pacientes
+            columns:
+              - column: { name: id_paciente, valueNumeric: 5 }
+              - column: { name: rut, value: "55555555-5" }
+              - column: { name: nombres, value: "Lucía" }
+              - column: { name: apellidos, value: "Vargas" }
+              - column: { name: fecha_nacimiento, valueDate: "1992-09-05" }
+              - column: { name: email, value: "lucia.vargas@example.com" }
+              - column: { name: telefono, value: "+56955555555" }
+              - column: { name: direccion, value: "Plaza 5" }
+              - column: { name: activo, valueBoolean: true }
+
+        - insert:
+            tableName: pacientes
+            columns:
+              - column: { name: id_paciente, valueNumeric: 6 }
+              - column: { name: rut, value: "66666666-6" }
+              - column: { name: nombres, value: "Carlos" }
+              - column: { name: apellidos, value: "Soto" }
+              - column: { name: fecha_nacimiento, valueDate: "1970-07-22" }
+              - column: { name: email, value: "carlos.soto@example.com" }
+              - column: { name: telefono, value: "+56966666666" }
+              - column: { name: direccion, value: "Barrio 6" }
+              - column: { name: activo, valueBoolean: true }
+
+        - insert:
+            tableName: pacientes
+            columns:
+              - column: { name: id_paciente, valueNumeric: 7 }
+              - column: { name: rut, value: "77777777-7" }
+              - column: { name: nombres, value: "Sofía" }
+              - column: { name: apellidos, value: "Muñoz" }
+              - column: { name: fecha_nacimiento, valueDate: "2000-11-11" }
+              - column: { name: email, value: "sofia.munoz@example.com" }
+              - column: { name: telefono, value: "+56977777777" }
+              - column: { name: direccion, value: "Calle 7" }
+              - column: { name: activo, valueBoolean: true }
+
+        - insert:
+            tableName: pacientes
+            columns:
+              - column: { name: id_paciente, valueNumeric: 8 }
+              - column: { name: rut, value: "88888888-8" }
+              - column: { name: nombres, value: "Diego" }
+              - column: { name: apellidos, value: "Martínez" }
+              - column: { name: fecha_nacimiento, valueDate: "1988-02-02" }
+              - column: { name: email, value: "diego.martinez@example.com" }
+              - column: { name: telefono, value: "+56988888888" }
+              - column: { name: direccion, value: "Ruta 8" }
+              - column: { name: activo, valueBoolean: true }
+
+        - insert:
+            tableName: pacientes
+            columns:
+              - column: { name: id_paciente, valueNumeric: 9 }
+              - column: { name: rut, value: "99999999-9" }
+              - column: { name: nombres, value: "Valentina" }
+              - column: { name: apellidos, value: "Herrera" }
+              - column: { name: fecha_nacimiento, valueDate: "1995-05-05" }
+              - column: { name: email, value: "valentina.herrera@example.com" }
+              - column: { name: telefono, value: "+56999999999" }
+              - column: { name: direccion, value: "Sector 9" }
+              - column: { name: activo, valueBoolean: true }
+
+        - insert:
+            tableName: pacientes
+            columns:
+              - column: { name: id_paciente, valueNumeric: 10 }
+              - column: { name: rut, value: "10101010-0" }
+              - column: { name: nombres, value: "Rodrigo" }
+              - column: { name: apellidos, value: "Castro" }
+              - column: { name: fecha_nacimiento, valueDate: "1982-04-04" }
+              - column: { name: email, value: "rodrigo.castro@example.com" }
+              - column: { name: telefono, value: "+56910101010" }
+              - column: { name: direccion, value: "Camino 10" }
+              - column: { name: activo, valueBoolean: true }
+
+  - changeSet:
+      id: 004-insert-contactos
+      author: copilot
+      changes:
+        - insert:
+            tableName: contactos_emergencia
+            columns:
+              - column: { name: id_contacto, valueNumeric: 1 }
+              - column: { name: nombre_contacto, value: "María Pérez" }
+              - column: { name: telefono_contacto, value: "+56900000001" }
+              - column: { name: parentesco, value: "Cónyuge" }
+              - column: { name: id_paciente, valueNumeric: 1 }
+
+        - insert:
+            tableName: contactos_emergencia
+            columns:
+              - column: { name: id_contacto, valueNumeric: 2 }
+              - column: { name: nombre_contacto, value: "Luis Gómez" }
+              - column: { name: telefono_contacto, value: "+56900000002" }
+              - column: { name: parentesco, value: "Padre" }
+              - column: { name: id_paciente, valueNumeric: 2 }
+
+        - insert:
+            tableName: contactos_emergencia
+            columns:
+              - column: { name: id_contacto, valueNumeric: 3 }
+              - column: { name: nombre_contacto, value: "Carolina Rojas" }
+              - column: { name: telefono_contacto, value: "+56900000003" }
+              - column: { name: parentesco, value: "Madre" }
+              - column: { name: id_paciente, valueNumeric: 3 }
+
+        - insert:
+            tableName: contactos_emergencia
+            columns:
+              - column: { name: id_contacto, valueNumeric: 4 }
+              - column: { name: nombre_contacto, value: "Sergio López" }
+              - column: { name: telefono_contacto, value: "+56900000004" }
+              - column: { name: parentesco, value: "Hermano" }
+              - column: { name: id_paciente, valueNumeric: 4 }
+
+        - insert:
+            tableName: contactos_emergencia
+            columns:
+              - column: { name: id_contacto, valueNumeric: 5 }
+              - column: { name: nombre_contacto, value: "Patricia Vargas" }
+              - column: { name: telefono_contacto, value: "+56900000005" }
+              - column: { name: parentesco, value: "Amiga" }
+              - column: { name: id_paciente, valueNumeric: 5 }
