@@ -69,6 +69,22 @@ databaseChangeLog:
                   type: BIGINT
 
   - changeSet:
+      id: 002b-fk-contacto-paciente
+      author: copilot
+      preConditions:
+        onFail: MARK_RAN
+        not:
+          foreignKeyConstraintExists:
+            foreignKeyName: fk_contacto_paciente
+      changes:
+        - addForeignKeyConstraint:
+            baseTableName: contactos_emergencia
+            baseColumnNames: id_paciente
+            referencedTableName: pacientes
+            referencedColumnNames: id_paciente
+            constraintName: fk_contacto_paciente
+
+  - changeSet:
       id: 003-insert-pacientes
       author: copilot
       changes:

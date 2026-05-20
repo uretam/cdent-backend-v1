@@ -1,5 +1,7 @@
 package com.cdent.pacientes.models;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import jakarta.persistence.*;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.Email;
@@ -8,6 +10,7 @@ import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -57,6 +60,8 @@ public class Paciente {
 
     @OneToMany(mappedBy = "paciente", cascade = CascadeType.ALL, orphanRemoval = true)
     @Valid
+    @JsonManagedReference
+    @ToString.Exclude
     private List<ContactoEmergencia> contactosEmergencia = new ArrayList<>();
 
 }

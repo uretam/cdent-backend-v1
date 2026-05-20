@@ -29,14 +29,22 @@ public class PacienteService {
     }
 
     public Paciente save(Paciente paciente) {
+        linkContactos(paciente);
         return pacienteRepository.save(paciente);
     }
 
     public Optional<Paciente> update(Long id, Paciente paciente) {
         return pacienteRepository.findById(id).map(existing -> {
             paciente.setIdPaciente(existing.getIdPaciente());
+            linkContactos(paciente);
             return pacienteRepository.save(paciente);
         });
+    }
+
+    private void linkContactos(Paciente paciente) {
+        if (paciente.getContactosEmergencia() != null) {
+            paciente.getContactosEmergencia().forEach(contacto -> contacto.setPaciente(paciente));
+        }
     }
 
     public void deleteById(Long id) {
