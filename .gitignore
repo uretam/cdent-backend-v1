@@ -6,7 +6,6 @@ out/
 
 # Entornos de desarrollo
 .idea/
-.vscode/
 *.iml
 .project
 .classpath

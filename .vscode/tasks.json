@@ -1,0 +1,172 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "1. Iniciar pacientes (9081)",
+            "type": "shell",
+            "command": ".\\mvnw.cmd spring-boot:run",
+            "options": {
+                "cwd": "${workspaceFolder}/pacientes"
+            },
+            "isBackground": true,
+            "problemMatcher": {
+                "owner": "spring-boot",
+                "pattern": {
+                    "regexp": "^.*$"
+                },
+                "background": {
+                    "activeOnStart": true,
+                    "beginsPattern": "^.*Starting.*",
+                    "endsPattern": "^.*Started PacientesApplication.*"
+                }
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "dedicated",
+                "group": "cdent-backend"
+            }
+        },
+        {
+            "label": "2. Iniciar odontologos (9082)",
+            "type": "shell",
+            "command": ".\\mvnw.cmd spring-boot:run",
+            "options": {
+                "cwd": "${workspaceFolder}/odontologos"
+            },
+            "isBackground": true,
+            "problemMatcher": {
+                "owner": "spring-boot",
+                "pattern": {
+                    "regexp": "^.*$"
+                },
+                "background": {
+                    "activeOnStart": true,
+                    "beginsPattern": "^.*Starting.*",
+                    "endsPattern": "^.*Started OdontologosApplication.*"
+                }
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "dedicated",
+                "group": "cdent-backend"
+            }
+        },
+        {
+            "label": "3. Iniciar citas (9083)",
+            "type": "shell",
+            "command": ".\\mvnw.cmd spring-boot:run",
+            "options": {
+                "cwd": "${workspaceFolder}/citas"
+            },
+            "isBackground": true,
+            "problemMatcher": {
+                "owner": "spring-boot",
+                "pattern": {
+                    "regexp": "^.*$"
+                },
+                "background": {
+                    "activeOnStart": true,
+                    "beginsPattern": "^.*Starting.*",
+                    "endsPattern": "^.*Started CitasApplication.*"
+                }
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "dedicated",
+                "group": "cdent-backend"
+            }
+        },
+        {
+            "label": "4. Iniciar usuarios (9084)",
+            "type": "shell",
+            "command": ".\\mvnw.cmd spring-boot:run",
+            "options": {
+                "cwd": "${workspaceFolder}/usuarios"
+            },
+            "isBackground": true,
+            "problemMatcher": {
+                "owner": "spring-boot",
+                "pattern": {
+                    "regexp": "^.*$"
+                },
+                "background": {
+                    "activeOnStart": true,
+                    "beginsPattern": "^.*Starting.*",
+                    "endsPattern": "^.*Started UsuariosApplication.*"
+                }
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "dedicated",
+                "group": "cdent-backend"
+            }
+        },
+        {
+            "label": "5. Iniciar tratamientos (9085)",
+            "type": "shell",
+            "command": ".\\mvnw.cmd spring-boot:run",
+            "options": {
+                "cwd": "${workspaceFolder}/tratamientos"
+            },
+            "isBackground": true,
+            "problemMatcher": {
+                "owner": "spring-boot",
+                "pattern": {
+                    "regexp": "^.*$"
+                },
+                "background": {
+                    "activeOnStart": true,
+                    "beginsPattern": "^.*Starting.*",
+                    "endsPattern": "^.*Started TratamientosApplication.*"
+                }
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "dedicated",
+                "group": "cdent-backend"
+            }
+        },
+        {
+            "label": "6. Iniciar api-gateway (9080)",
+            "type": "shell",
+            "command": ".\\mvnw.cmd spring-boot:run",
+            "options": {
+                "cwd": "${workspaceFolder}/api-gateway"
+            },
+            "isBackground": true,
+            "problemMatcher": {
+                "owner": "spring-boot",
+                "pattern": {
+                    "regexp": "^.*$"
+                },
+                "background": {
+                    "activeOnStart": true,
+                    "beginsPattern": "^.*Starting.*",
+                    "endsPattern": "^.*Started ApiGatewayApplication.*"
+                }
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "dedicated",
+                "group": "cdent-backend"
+            }
+        },
+        {
+            "label": "ARRANCAR TODO EL BACKEND",
+            "dependsOn": [
+                "1. Iniciar pacientes (9081)",
+                "2. Iniciar odontologos (9082)",
+                "3. Iniciar citas (9083)",
+                "4. Iniciar usuarios (9084)",
+                "5. Iniciar tratamientos (9085)",
+                "6. Iniciar api-gateway (9080)"
+            ],
+            "dependsOrder": "parallel",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": []
+        }
+    ]
+}
